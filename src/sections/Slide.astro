@@ -1,0 +1,62 @@
+---
+import "@splidejs/splide/dist/css/splide.min.css";
+import Image from '../components/Image.astro';
+---
+
+<section id="my-splide" class="splide slider">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide">
+        <Image FileName="img_slider_01" pcWidth={254} pcHeight={335} spWidth={200} spHeight={260} alt="oooo風" />
+      </li>
+      <li class="splide__slide">
+        <Image FileName="img_slider_02" pcWidth={254} pcHeight={335} spWidth={200} spHeight={260} alt="oooo風" />
+      </li>
+      <li class="splide__slide">
+        <Image FileName="img_slider_01" pcWidth={254} pcHeight={335} spWidth={200} spHeight={260} alt="oooo風" />
+      </li>
+      <li class="splide__slide">
+        <Image FileName="img_slider_02" pcWidth={254} pcHeight={335} spWidth={200} spHeight={260} alt="oooo風" />
+      </li>
+      <li class="splide__slide">
+        <Image FileName="img_slider_01" pcWidth={254} pcHeight={335} spWidth={200} spHeight={260} alt="oooo風" />
+      </li>
+      <li class="splide__slide">
+        <Image FileName="img_slider_02" pcWidth={254} pcHeight={335} spWidth={200} spHeight={260} alt="oooo風" />
+      </li>
+      <li class="splide__slide">
+        <Image FileName="img_slider_01" pcWidth={254} pcHeight={335} spWidth={200} spHeight={260} alt="oooo風" />
+      </li>
+      <li class="splide__slide">
+        <Image FileName="img_slider_02" pcWidth={254} pcHeight={335} spWidth={200} spHeight={260} alt="oooo風" />
+      </li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  import Splide from '@splidejs/splide';
+  import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+
+  new Splide('#my-splide', {
+    type   : 'loop',
+    drag   : false,
+    focus  : 'center',
+    pagination: false,
+    arrows: false,
+    gap: 18,
+    perPage: 4,
+    fixedWidth: 254,
+    autoScroll: {
+      speed: 0.5,
+    },
+  }).mount( { AutoScroll } );
+</script>
+
+<style lang="scss">
+@use "../styles/mixin" as *;
+.slider{
+  margin-top: 20px;
+}
+
+</style>

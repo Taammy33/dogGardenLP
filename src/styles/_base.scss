@@ -1,0 +1,24 @@
+@use "_mixin" as *;
+.is-pc {
+  display: none;
+  @include pc {
+    display: block;
+  }
+}
+.is-tab {
+  display: none;
+  @include tab {
+    display: block;
+  }
+}
+.is-sp {
+  display: none;
+  @include sp {
+    display: block;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

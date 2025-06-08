@@ -1,0 +1,91 @@
+---
+import Section from '../components/Section.astro';
+import Container from '../components/Container.astro';
+import FadeWapper from '../components/FadeWapper.astro';
+import H2 from '../components/H2.astro';
+---
+
+<Section>
+  <Container>
+    <FadeWapper type='text'>
+      <H2 text='よくあるご質問' heading='Q&A'/>
+    </FadeWapper>
+    <div class="faq__inner">
+      <div class="faq__item">
+        <div class="faq__q">
+          <span>Q</span>
+        </div>
+        <h3 class="faq__heading">小型犬でも庭づくりの相談はできますか？</h3>
+        <p class="faq__text">もちろんです。小型犬・大型犬問わず、それぞれの特性や行動範囲をふまえて、最適な庭をご提案します。段差や足元の素材、安全性なども細かく配慮いたします。</p>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">
+          <span>Q</span>
+        </div>
+        <h3 class="faq__heading">お手入れが大変にならないか心配です。</h3>
+        <p class="faq__text">維持のしやすさもプランニングの大切な要素と考えています。自動潅水や管理が楽な植栽の選定、定期的なメンテナンスサービスもご用意していますのでご安心ください。</p>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">
+          <span>Q</span>
+        </div>
+        <h3 class="faq__heading">IT設備（センサーや照明など）にも対応できますか？</h3>
+        <p class="faq__text">はい、温度センサー・照明・自動開閉ゲートなど、最新技術を取り入れたご提案も可能です。愛犬にとっても人にとってもより快適で安心な空間を目指します。</p>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">
+          <span>Q</span>
+        </div>
+        <h3 class="faq__heading">相談してから完成まで、どれくらいの期間がかかりますか？</h3>
+        <p class="faq__text">内容や規模により異なりますが、初回ご相談から施工完了までは概ね1.5〜3ヶ月程度が目安です。お急ぎの場合もスケジュールをご相談いただけます。</p>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style lang="scss">
+@use "../styles/mixin" as *;
+.faq__inner{
+  margin-top: 60px;
+  @include sp {
+    margin-top: 40px;
+  }
+}
+.faq__item{
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  gap: 20px 17px;
+  @include sp {
+    align-items: start;
+  }
+  + .faq__item{
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-mine-shaft);
+  } 
+}
+.faq__q{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  font-size: 24px;
+  color: var(--color-dallas);
+  font-family: var(--font-gilda);
+}
+.faq__heading{
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  font-size: 18px;
+  color: var(--color-dallas);
+  font-family: var(--font-serif);
+}
+.faq__text{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  font-size: 16px;
+  color: var(--color-mine-shaft);
+  font-family: var(--font-sans);
+  line-height: 1.6
+}
+
+</style>

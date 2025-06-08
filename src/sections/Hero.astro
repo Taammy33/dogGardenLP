@@ -1,0 +1,77 @@
+---
+import Image from '../components/Image.astro';
+import FadeWapper from '../components/FadeWapper.astro';
+---
+
+<section class="hero">
+  <div class="hero__inner">
+    <Image FileName="img_hero" pcWidth={1440} pcHeight={957} spWidth={786} spHeight={1726} />
+    <div class="hero__text">
+      <FadeWapper type='text'>
+        <h1><span>大切な家族と過ごす、</span><span>&ldquo;美しい庭時間&rdquo;をあなたに</span></h1>
+        <p><span>犬も人も、心地よく暮らせる、</span><span>フルオーダーのハイエンドガーデン</span></p>
+      </FadeWapper>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+@use "../styles/mixin" as *;
+  .hero{
+    position: relative;
+    &::after{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0.17;
+      background: linear-gradient(180deg,rgb(0,0,0) 17%,rgb(0,0,0) 77%);
+    }
+  }
+  .hero__inner{
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    :global(img){
+      object-fit: cover;
+      object-position: center top;
+      width: 100%;
+      height: 100%;
+    }
+    :global(picture){
+      height: 100%;
+    }
+  }
+  .hero__text{
+    position: absolute;
+    color: var(--color-white);
+    font-family: var(--font-mincho);
+    left: 80px;
+    bottom: 80px;
+    z-index: 10;
+    @include sp {
+      bottom: auto;
+      left: 20px;
+      top: calc(100% * 180 / 867);
+    }
+    h1{
+      font-size: 36px;
+      @include sp{
+        font-size: 24px;
+      }
+    }
+    p{
+      margin-top: 20px;
+      font-size: 24px;
+      @include sp{
+        font-size: 16px;
+      }
+    }
+    span{
+      display: inline-block;
+    }
+  }
+</style>

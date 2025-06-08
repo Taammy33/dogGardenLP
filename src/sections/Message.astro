@@ -1,0 +1,65 @@
+---
+import Section from '../components/Section.astro';
+import Container from '../components/Container.astro';
+import H2 from '../components/H2.astro';
+import H3 from '../components/H3.astro';
+import Text from '../components/Text.astro';
+import Image from '../components/Image.astro';
+import FadeWapper from '../components/FadeWapper.astro';
+---
+
+<Section>
+  <Container>
+    <FadeWapper type='text'>
+      <H2 text='代表からのメッセージ' heading='Message'/>
+    </FadeWapper>
+    <div class="message">
+      <div class="message__image">
+        <FadeWapper type='fade'>
+          <Image FileName="img_message_01" pcWidth={269} pcHeight={269} spWidth={706} spHeight={706} />
+        </FadeWapper>
+      </div>
+      <div class="message__content">
+        <FadeWapper type='text'>
+          <H3>&ldquo;犬目線&rdquo;もわかる庭づくりの専門家です</H3>
+          <Text>
+            私自身、長年犬と暮らしてきました。<br>暑い日、冷たいタイルの上に寝そべる姿。<br>玄関横の草むらで、ひと休みする姿。
+          </Text>
+          <Text>
+            そんな毎日の中で、「犬にも庭に&ldquo;好きな場所&rdquo;がある」と気づいたんです。
+          </Text>
+          <Text>
+            私たちの提案する庭は、人にとっての快適さだけでなく、愛犬にとっても安心で心地よい空間であることが大前提。
+          </Text>
+          <Text>
+            あなたと、あなたの家族全員にとって特別な庭を、一緒に形にしていきましょう。
+          </Text>
+          <div class="name">
+            <Text>
+              代表取締役 石川哲也
+            </Text>
+          </div>
+        </FadeWapper>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style lang="scss">
+@use "../styles/mixin" as *;
+.message{
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: calc(100% * 269 / 920) 1fr;
+  column-gap: calc(100% * 60 / 920);
+  align-items: start;
+  @include sp {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+  .name{
+    margin-top: 60px;
+  }
+}
+
+</style>

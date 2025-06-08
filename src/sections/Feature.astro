@@ -1,0 +1,97 @@
+---
+import Section from '../components/Section.astro';
+import Container from '../components/Container.astro';
+import H2 from '../components/H2.astro';
+import H3 from '../components/H3.astro';
+import Image from '../components/Image.astro';
+import FadeWapper from '../components/FadeWapper.astro';
+---
+
+<Section>
+  <Container>
+    <FadeWapper type='text'>
+      <H2 text='特徴' heading='Feature'/>
+      <H3><span>一流のこだわりには、</span><span>&ldquo;理由&rdquo;があります</span></H3>
+    </FadeWapper>
+    <div class="feature">
+      <FadeWapper type='fade'>
+        <div class="feature__item">
+          <div class="feature__image">
+            <Image FileName="img_feature_01" pcWidth={280} pcHeight={370} spWidth={706} spHeight={932} />
+          </div>
+          <h4 class="feature__heading">完全オーダーメイドデザイン</h4>
+          <p class="feature__text">建物との調和・動線設計・季節の演出</p>
+        </div>
+      </FadeWapper>
+      <FadeWapper type='fade'>
+        <div class="feature__item">
+          <div class="feature__image">
+            <Image FileName="img_feature_02" pcWidth={280} pcHeight={370} spWidth={706} spHeight={932} />
+          </div>
+          <h4 class="feature__heading">植栽・素材の提案力</h4>
+          <p class="feature__text">天然石・ウッド・耐久性と<br>美しさを両立</p>
+        </div>
+      </FadeWapper>
+      <FadeWapper type='fade'>
+        <div class="feature__item">
+          <div class="feature__image">
+            <Image FileName="img_feature_03" pcWidth={280} pcHeight={370} spWidth={706} spHeight={932} />
+          </div>
+          <h4 class="feature__heading">IT×ガーデン</h4>
+          <p class="feature__text">温度センサー・自動水やり・<br>夜間ライトアップ演出</p>
+        </div>
+      </FadeWapper>
+      <FadeWapper type='fade'>
+        <div class="feature__item">
+          <div class="feature__image">
+            <Image FileName="img_feature_04" pcWidth={280} pcHeight={370} spWidth={706} spHeight={932} />
+          </div>
+          <h4 class="feature__heading">施工後のフルメンテナンス</h4>
+          <p class="feature__text">枯れ・劣化・トラブルにも定期対応</p>
+        </div>
+      </FadeWapper>
+      <FadeWapper type='fade'>
+        <div class="feature__item">
+          <div class="feature__image">
+            <Image FileName="img_feature_05" pcWidth={280} pcHeight={370} spWidth={706} spHeight={932} />
+          </div>
+          <h4 class="feature__heading">犬目線の安全設計</h4>
+          <p class="feature__text">足裏にやさしい素材・誤飲防止・<br>日陰スペース</p>
+        </div>
+      </FadeWapper>
+    </div>
+  </Container>
+</Section>
+
+<style lang="scss">
+@use "../styles/mixin" as *;
+.feature{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 60px 40px;
+}
+.feature__heading{
+  text-align: center;
+  color: var(--color-dallas);
+  font-family: var(--font-mincho-bold);
+  font-size: 18px;
+  margin-top: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-mine-shaft);
+  margin-bottom: 20px;
+  @include sp {
+    font-size: 16px;
+  }
+}
+.feature__text{
+  text-align: center;
+  font-family: var(--font-sans);
+  color: var(--color-mine-shaft);
+  font-size: 16px;
+  @include sp {
+    font-size: 14px;
+  }
+}
+
+</style>

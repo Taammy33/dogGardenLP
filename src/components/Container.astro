@@ -1,0 +1,27 @@
+---
+interface Props {
+
+}
+
+const {
+} = Astro.props;
+
+---
+
+<div class="container">
+  <div class="container__inner">
+    <slot />
+  </div>
+</div>
+
+<style is:global lang="scss">
+  .container{
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .container__inner{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+</style>

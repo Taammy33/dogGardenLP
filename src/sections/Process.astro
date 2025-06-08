@@ -1,0 +1,146 @@
+---
+import Section from '../components/Section.astro';
+import Container from '../components/Container.astro';
+import H2 from '../components/H2.astro';
+import FadeWapper from '../components/FadeWapper.astro';
+---
+
+<Section>
+  <Container>
+    <FadeWapper type='text'>
+      <H2 text='施工の流れ' heading='Process'/>
+    </FadeWapper>
+    <div class="process__inner">
+      <div class="process__item">
+        <div class="process__num">
+          <span><span>01</span></span>
+        </div>
+        <div class="process__content">
+          <h3 class="process__heading">お問い合わせ・ご相談（無料）</h3>
+          <p class="process__text">まずは「こんなお庭ができたらいいな」という気持ちをお聞かせください。<br>ご相談はオンライン・訪問のどちらでも可能です。</p>
+        </div>
+      </div>
+      <div class="process__item">
+        <div class="process__num">
+          <span><span>02</span></span>
+        </div>
+        <div class="process__content">
+          <h3 class="process__heading">ヒアリング・現地調査</h3>
+          <p class="process__text">ご家族構成、ライフスタイル、愛犬の性格まで丁寧にヒアリング。<br>実際の敷地や動線を確認し、最適なプランの土台をつくります。</p>
+        </div>
+      </div>
+      <div class="process__item">
+        <div class="process__num">
+          <span><span>03</span></span>
+        </div>
+        <div class="process__content">
+          <h3 class="process__heading">コンセプト提案・お見積もり</h3>
+          <p class="process__text">伺ったお話をもとに、理想の暮らしを叶える庭のプランをご提案。<br>デザイン・材質・植栽・IT設備まで含めたお見積もりをご提示します。</p>
+        </div>
+      </div>
+      <div class="process__item">
+        <div class="process__num">
+          <span><span>04</span></span>
+        </div>
+        <div class="process__content">
+          <h3 class="process__heading">デザイン確定・ご契約</h3>
+          <p class="process__text">プランをすり合わせながら、ご納得いくまでご相談いただけます。<br>内容が確定次第、ご契約となります。</p>
+        </div>
+      </div>
+      <div class="process__item">
+        <div class="process__num">
+          <span><span>05</span></span>
+        </div>
+        <div class="process__content">
+          <h3 class="process__heading">施工開始・お引き渡し</h3>
+          <p class="process__text">経験豊富な職人が丁寧に施工。進捗は適宜ご報告いたします。<br>完成後は、実際の動線や快適性も一緒にチェックしながらお引き渡しします。</p>
+        </div>
+      </div>
+      <div class="process__item">
+        <div class="process__num">
+          <span><span>06</span></span>
+        </div>
+        <div class="process__content">
+          <h3 class="process__heading">アフターメンテナンス</h3>
+          <p class="process__text">お庭は&ldquo;育てていく&rdquo;もの。植栽の手入れから設備の調整まで、定期的にメンテナンスいたします。<br>四季に応じた暮らし方のご相談もお気軽にどうぞ。</p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style lang="scss">
+@use "../styles/mixin" as *;
+.process__inner{
+  margin-top: 60px;
+  @include sp {
+    margin-top: 40px;
+  }
+}
+.process__item{
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 35px;
+  @include sp {
+    column-gap: 24px;
+  }
+  + .process__item{
+    margin-top: 20px;
+    @include sp {
+      margin-top: 30px;
+    }
+  } 
+}
+.process__num{
+  position: relative;
+  > span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    background-color: var(--color-dallas);
+    border-radius: 50%;
+    > span{
+      color: var(--color-white);
+      display: inline-block;
+      font-family: var(--font-gilda);
+      font-size: 24px;
+    }
+  }
+  &::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-dallas);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.process__heading{
+  color: var(--color-dallas);
+  font-size: 18px;
+  font-family: var(--font-mincho-bold);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  @include sp {
+    font-size: 16px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+}
+.process__text{
+  margin-top: 14px;
+  color: var(--color-mine-shaft);
+  font-size: 16px;
+  font-family: var(--font-sans);
+  @include sp {
+    margin-top: 9px;
+    font-size: 14px;
+  }
+}
+
+</style>

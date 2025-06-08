@@ -1,0 +1,52 @@
+---
+import Section from '../components/Section.astro';
+import FadeWapper from '../components/FadeWapper.astro';
+import Image from '../components/Image.astro';
+import H2 from '../components/H2.astro';
+import H3 from '../components/H3.astro';
+import Text from '../components/Text.astro';
+---
+
+<Section>
+  <div class="missionWrapper">
+    <div class="missionImage">
+      <FadeWapper type='fade'>
+        <Image FileName="img_mission" pcWidth={531} pcHeight={470} spWidth={786} spHeight={800} />
+      </FadeWapper>
+    </div>
+    <div class="missionContent">
+      <FadeWapper type='text'>
+        <H2 text='ミッション' heading='Mission'/>
+        <H3><span>ただの&ldquo;ペット向け&rdquo;ではなく、</span><span>&ldquo;家族の未来&rdquo;をつくる庭</span></H3>
+        <Text>
+          犬と暮らしてきた私だからこそ、わかることがあります。<br>真夏の照り返しや足元の素材、安心できる日陰の場所——<br>それは&ldquo;人のため&rdquo;だけではなく、&ldquo;犬のため&rdquo;にも設計された庭。<br>愛犬がごろんと寝転び、気持ちよさそうに目を細める、そんな風景を届けたくて。<br>私たちは、人と犬が一緒に心地よく過ごせる庭を、1件ずつ丁寧に形にしています。
+        </Text>
+      </FadeWapper>
+    </div>
+  </div>
+</Section>
+
+<style lang="scss">
+@use "../styles/mixin" as *;
+.missionWrapper{
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  column-gap: calc(100% * 60 / 1440);
+  margin-right: 20px;
+  @include sp {
+    flex-direction: column;
+    row-gap: 60px;
+    margin-right: 0;
+  }
+}
+.missionContent{
+  @include sp {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+</style>

@@ -1,0 +1,34 @@
+---
+import Section from '../components/Section.astro';
+import Container from '../components/Container.astro';
+import H2 from '../components/H2.astro';
+import H3 from '../components/H3.astro';
+import Text from '../components/Text.astro';
+import FadeWapper from '../components/FadeWapper.astro';
+---
+
+<Section marginTop='narrow'>
+  <Container>
+    <FadeWapper type='text'>
+      <H2 text='コンセプト' heading='Concept'/>
+      <H3>&ldquo;理想のひととき&rdquo;を、日常に。</H3>
+      <Text>
+        朝の光に包まれて、愛犬とテラスで深呼吸。<br>ゆっくり本を読んだり、草花の手入れをしながら、愛犬が気ままに庭を散歩している——。
+      </Text>
+      <Text>
+        忙しい日常の中で、ふと「こんな暮らしがしたい」と思う瞬間はありませんか？
+      </Text>
+      <Text>
+        私たちは、その憧れを、確かな設計と提案力でかたちにしています。<br>ここから先は、そんな想いを込めて庭をつくる、私たちの考え方をお伝えします。
+      </Text>
+    </FadeWapper>
+  </Container>
+</Section>
+
+<style lang="scss">
+@use "../styles/mixin" as *;
+.slider{
+  margin-top: 20px;
+}
+
+</style>

@@ -1,0 +1,60 @@
+---
+interface Props {
+  text: string;
+  heading: string;
+}
+
+const {
+  text,
+  heading,
+} = Astro.props;
+const isQandA = heading === 'Q&A';
+
+---
+
+<h2 class="h2">
+  <span class="heading">
+    {isQandA
+      ? <>Q<span class="faq">&</span>A</>
+      : heading}
+  </span>
+  <span class="text"><span>{text}</span></span>
+</h2>
+
+<style is:global lang="scss">
+  @use "../styles/mixin" as *;
+  .h2{
+    .heading{
+      font-family: var(--font-gilda);
+      color: var(--color-dallas);
+      font-size: 55px;
+      @include sp {
+        font-size: 40px;
+      }
+      > .faq{
+        font-size: 40px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+    }
+    .text{
+      font-family: var(--font-mincho);
+      color: var(--color-dallas);
+      font-size: 12px;
+      font-weight: bold;
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      &::before{
+        content: "";
+        display: inline-block;
+        height: 1px;
+        width: 56px;
+        background-color: var(--color-dallas);
+      }
+    }
+    > span{
+      display: block;
+    }
+  }
+</style>

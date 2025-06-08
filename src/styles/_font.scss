@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url("/assets/font/NotoSansJP-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif JP";
+  src: url("/assets/font/NotoSerifJP-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Shippori Mincho";
+  src: url("/assets/font/ShipporiMincho-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Shippori Mincho bold";
+  src: url("/assets/font/ShipporiMincho-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilda Display";
+  src: url("/assets/font/GildaDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-sans: "Noto Sans JP", sans-serif;
+$font-serif: "Noto Serif JP", serif;
+$font-mincho: "Shippori Mincho", serif;
+$font-mincho-bold: "Shippori Mincho bold", serif;
+$font-gilda: "Gilda Display", serif;
+
+:root {
+  --font-sans: #{$font-sans};
+  --font-serif: #{$font-serif};
+  --font-mincho: #{$font-mincho};
+  --font-mincho-bold: #{$font-mincho-bold};
+  --font-gilda: #{$font-gilda};
+}

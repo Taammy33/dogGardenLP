@@ -1,0 +1,59 @@
+---
+interface Props {
+  FileName: string;
+  pcWidth: number;
+  pcHeight: number;
+  spWidth: number;
+  spHeight: number;
+  alt?: string;
+}
+
+const {
+  FileName,
+  pcWidth,
+  pcHeight,
+  spWidth,
+  spHeight,
+  alt = "",
+} = Astro.props;
+
+// .webpファイル名に変換（拡張子置き換え）
+const basePath = "/assets/img";
+---
+
+<picture>
+  <source
+    media="(min-width:768px)"
+    srcset={`${basePath}/${FileName}_pc.webp`}
+    type="image/webp"
+    width={pcWidth}
+    height={pcHeight}
+  />
+  <source
+    media="(min-width:1025px)"
+    srcset={`${basePath}/${FileName}_pc.jpg`}
+    width={pcWidth}
+    height={pcHeight}
+  />
+  <source
+  srcset={`${basePath}/${FileName}_sp.webp`}
+    type="image/webp"
+    width={spWidth}
+    height={spHeight}
+  />
+  <img
+    src={`${basePath}/${FileName}_sp.jpg`}
+    alt={alt}
+    width={spWidth}
+    height={spHeight}
+    loading="lazy"
+  />
+</picture>
+
+<style is:global lang="scss">
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+</style>

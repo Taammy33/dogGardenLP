@@ -1,0 +1,26 @@
+---
+interface Props {
+  marginTop?: "narrow"
+}
+
+const {
+  marginTop
+} = Astro.props;
+
+const sectionClass = `section${marginTop === "narrow" ? " mt-narrow" : ""}`;
+
+---
+
+<section class={sectionClass}>
+  <slot />
+</section>
+
+<style is:global lang="scss">
+  @use "../styles/mixin" as *;
+  .section{
+    margin-top: 120px;
+    &.mt-narrow {
+      margin-top: 60px;
+    }
+  }
+</style>

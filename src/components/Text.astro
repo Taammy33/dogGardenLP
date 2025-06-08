@@ -1,0 +1,30 @@
+---
+
+---
+
+<p class="text"><slot /></p>
+
+<style is:global lang="scss">
+@use "../styles/mixin" as *;
+.text{
+  font-size: 16px;
+  font-family: var(--font-sans);
+  color: var(--color-mine-shaft);
+  line-height: 2;
+  @include sp {
+    font-size: 14px;
+  }
+  &+ .text{
+    margin-top: 32px;
+    @include sp {
+      margin-top: 28px;
+    }
+  }
+  .h3 + & {
+    margin-top: 30px;
+    @include sp {
+      margin-top: 27px;
+    }
+  }
+}
+</style>

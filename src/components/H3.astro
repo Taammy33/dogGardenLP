@@ -1,0 +1,26 @@
+---
+
+---
+
+<h3 class="h3"><slot /></h3>
+
+<style is:global lang="scss">
+  @use "../styles/mixin" as *;
+  .h3{
+    font-family: var(--font-mincho-bold);
+    color: var(--color-dallas);
+    font-size: 24px;
+    @include sp {
+      font-size: 20px;
+    }
+    > span{
+      display: inline-block;
+    }
+    .h2 + &{
+      margin-top: 60px;
+      @include sp {
+        margin-top: 40px;
+      }
+    }
+  }
+</style>
