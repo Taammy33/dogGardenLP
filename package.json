@@ -1,0 +1,22 @@
+{
+  "name": "strong-solstice",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "convert:webp": "node convert-to-webp.js"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "astro": "^5.7.13",
+    "modern-css-reset": "^1.4.0",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.89.0"
+  }
+}
