@@ -1,0 +1,96 @@
+---
+interface Props {
+  text: string;
+  tag: "input" | "textarea"
+  type?: "text" | "email";
+  entryID: string;
+  required?: boolean;
+  placeholder?: string
+}
+
+const {
+  text,
+  type,
+  tag,
+  entryID,
+  required,
+  placeholder
+} = Astro.props;
+---
+
+<div class="input">
+  <p class="input__text">{text}</p>
+
+  {tag === "input" && (
+    <input
+      type={type}
+      name={`entry.${entryID}`}
+      required={required}
+      placeholder={placeholder}
+    />
+  )}
+  {tag === "textarea" && (
+    <textarea
+      name={`entry.${entryID}`}
+      required={required}
+      placeholder={placeholder}
+      rows="5"
+    />
+  )}
+</div>
+
+<style is:global lang="scss">
+  @use "../styles/mixin" as *;
+
+  .input {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    font-family: var(--font-sans);
+    column-gap: 40px;
+    @include sp {
+      grid-template-columns: 1fr;
+      row-gap: 10px;
+    }
+    &:has(input){
+      align-items: center;
+    }
+    &:has(textarea){
+      align-items: start;
+    }
+    &__text {
+      color: var(--color-mine-shaft);
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+      padding: 12px 0;
+      @include sp {
+        padding: 0;
+        font-size: 14px;
+      }
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--color-silver);
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      @include sp {
+        padding: 0.5rem 0.75rem;
+      }
+
+      &:focus {
+        border-color: var(--color-dallas);
+        box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+      }
+
+      &::placeholder {
+        color: var(--color-silver-chalice);
+      }
+    }
+  }
+
+</style>

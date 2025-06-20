@@ -1,19 +1,34 @@
 ---
-
+import Section from '../components/Section.astro';
+import Container from '../components/Container.astro';
+import FadeWapper from '../components/FadeWapper.astro';
+import H2 from '../components/H2.astro';
+import Text from '../components/Text.astro';
+import Form from '../components/Form.astro';
+import Input from '../components/Input.astro';
 ---
 
-<form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSd6X8vNCmpRRIZb2pS1AVgprE3ivgyDn8_kTmkiGUXBBKGr-w/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
-  <span>メールアドレス</span>
-  <input type="text" size="19" name="emailAddress">
-  <button type="submit" value="Submit">Send</button>
-</form>
-<script type="text/javascript">var submitted = false;</script>
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thanks.html';}"></iframe>
+<Section>
+  <Container>
+    <FadeWapper type='text'>
+      <H2 text='お問い合わせ' heading='Contact'/>
+      <Text>
+        テキストがあればこちらに入力
+      </Text>
+    </FadeWapper>
+    <div class="contact__inner">
+      <Form formID="1mYAQlQdQVqjfN7pfexdi98iZi1plt4FsuSLei_bwDTI">
+        <Input text="メールアドレス" tag='input' type="email" entryID="1066244054" />
+        <Input text="メッセージ" tag='textarea' entryID="1066244054" />
+      </Form>
+    </div>
+  </Container>
+</Section>
 
 <style lang="scss">
 @use "../styles/mixin" as *;
-.slider{
-  margin-top: 20px;
+.contact__inner{
+  margin-top: 80px;
 }
 
 </style>

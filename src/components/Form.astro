@@ -1,0 +1,27 @@
+---
+interface Props {
+  formID: string;
+}
+
+const {
+  formID
+} = Astro.props;
+
+---
+
+<form action={`https://docs.google.com/forms/u/0/d/${formID}/formResponse`} method="post" target="hidden_iframe" onsubmit="submitted=true;" class="form">
+  <slot />
+</form>
+<script type="text/javascript">var submitted = false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thanks.html';}"></iframe>
+
+<style is:global lang="scss">
+@use "../styles/mixin" as *;
+
+.form{
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+}
+
+</style>
