@@ -14,11 +14,6 @@ import FadeWapper from '../components/FadeWapper.astro';
       <H2 text='代表からのメッセージ' heading='Message'/>
     </FadeWapper>
     <div class="message">
-      <div class="message__image">
-        <FadeWapper type='fade'>
-          <Image FileName="img_message_01" pcWidth={269} pcHeight={269} spWidth={706} spHeight={706} />
-        </FadeWapper>
-      </div>
       <div class="message__content">
         <FadeWapper type='text'>
           <H3>&ldquo;犬目線&rdquo;もわかる庭づくりの専門家です</H3>
@@ -49,7 +44,7 @@ import FadeWapper from '../components/FadeWapper.astro';
 @use "../styles/mixin" as *;
 .message{
   margin-top: 60px;
-  display: grid;
+  // display: grid;
   grid-template-columns: calc(100% * 269 / 920) 1fr;
   column-gap: calc(100% * 60 / 920);
   align-items: start;
